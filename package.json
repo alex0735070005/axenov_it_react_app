@@ -23,7 +23,12 @@
     "eject": "react-scripts eject",
     "lint": "./node_modules/eslint/bin/eslint.js -c ./.eslintrc --ext .jsx,.js 'src/'"
   },
-  "pre-commit": "npm run lunt",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lunt",
+      "pre-push": "npm test"
+    }
+  },
   "eslintConfig": {
     "extends": "react-app"
   },

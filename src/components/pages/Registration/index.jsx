@@ -56,7 +56,7 @@ const Registration = (props) => {
             color="inherit"
             onClick={handleClose}
           >
-            <CloseIcon />
+            <CloseIcon /> 
           </IconButton>,
         ]} 
       />
