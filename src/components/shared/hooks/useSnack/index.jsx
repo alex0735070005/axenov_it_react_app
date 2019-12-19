@@ -64,7 +64,7 @@ SnackContentWrapper.defaultProps = {
 const useSnack = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClose = () => setIsOpen(false);
-
+ 
   const { type, message } = props;
         
   return (

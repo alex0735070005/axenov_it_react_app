@@ -29,13 +29,7 @@
       "pre-push": "npm test"
     }
   },
-  "lint-staged": {
-    "*.{js, jsx}": [
-      "node_modules/.bin/eslint -c ./.eslintrc --ext .jsx,.js --max-warnings=0 'src/'",
-      "prettier --write",
-      "git add"
-    ]
-  },
+  
   "eslintConfig": {
     "extends": "react-app"
   },
