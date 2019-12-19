@@ -22,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "node_modules/.bin/eslint -c ./.eslintrc --ext .jsx,.js --max-warnings=0 'src/'"
-  },  
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
