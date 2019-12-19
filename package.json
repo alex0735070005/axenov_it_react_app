@@ -21,7 +21,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "node_modules/.bin/eslint -c ./.eslintrc --ext .jsx,.js --max-warnings=0 'src/'"
+    "eslint": "node_modules/.bin/eslint -c ./.eslintrc --ext .jsx,.js --max-warnings=0 'src/'",
+    "lint": "node_modules/.bin/eslint"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,6 +44,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "http-proxy-middleware": "^0.20.0",
     "husky": "^4.0.0-beta.5",
+    "lint-staged": "^9.5.0",
     "node-sass": "^4.13.0",
     "prettier": "1.19.1"
   }
