@@ -58,7 +58,7 @@ const Registration = (props) => {
           >
             <CloseIcon />
           </IconButton>,
-        ]}
+        ]} 
       />
 
       <Container maxWidth='sm'>
