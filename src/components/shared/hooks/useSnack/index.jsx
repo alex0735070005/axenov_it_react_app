@@ -66,7 +66,7 @@ const useSnack = (props) => {
   const handleClose = () => setIsOpen(false);
 
   const { type, message } = props;
-
+     
   return (
     <Snackbar
       anchorOrigin={{
