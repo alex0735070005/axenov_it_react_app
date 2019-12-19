@@ -21,14 +21,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "./node_modules/eslint/bin/eslint.js -c ./.eslintrc --ext .jsx,.js 'src/'"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm test"
-    }
-  },
+    "precommit": "lint-staged",
+    "lint": "node_modules/.bin/eslint -c ./.eslintrc --ext .jsx,.js --max-warnings=0 'src/'"
+  },  
   "eslintConfig": {
     "extends": "react-app"
   },

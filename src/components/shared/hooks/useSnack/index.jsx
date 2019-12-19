@@ -67,7 +67,7 @@ const useSnack = (props) => {
  
   const { type, message } = props;
            
-  return (
+  return ( 
     <Snackbar
       anchorOrigin={{
         vertical: 'bottom',
