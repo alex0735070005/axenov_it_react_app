@@ -17,13 +17,12 @@ import { fetchRegistration } from './helpers';
 
 import './styles.scss';
 
-const Registration = (props) => {  
+const Registration = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClose = () => setOpen(false);
 
   const send = (e) => {
-
     e.preventDefault();
     fetchRegistration(e.target).then((response) => {
       if (response && response.status === 200) {
@@ -56,12 +55,12 @@ const Registration = (props) => {
             color="inherit"
             onClick={handleClose}
           >
-            <CloseIcon /> 
+            <CloseIcon />
           </IconButton>,
-        ]} 
+        ]}
       />
 
-      <Container maxWidth='sm'>
+      <Container maxWidth="sm">
         <h1 className="page__title">
           <AssignmentIndIcon className="page__icon" />
           Registration

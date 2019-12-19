@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -11,7 +12,10 @@ const InputPassword = (props) => {
   const [isShow, changeIsShow] = useState(false);
 
   const {
-    classIconName, className, onChange, name,
+    classIconName,
+    className,
+    onChange,
+    name,
   } = props;
 
   const showPassword = () => {
@@ -41,6 +45,20 @@ const InputPassword = (props) => {
       }}
     />
   );
+};
+
+InputPassword.propTypes = {
+  classIconName: PropTypes.string,
+  className: PropTypes.string,
+  onChange: PropTypes.string,
+  name: PropTypes.string,
+};
+
+InputPassword.defaultProps = {
+  classIconName: '',
+  className: '',
+  onChange: '',
+  name: '',
 };
 
 export default InputPassword;
