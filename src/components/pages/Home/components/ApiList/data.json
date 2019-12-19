@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Get list posts method (GET)",
+    "query": "http://blog.api.axenov-it.com/v1/posts",
+    "description": "limit default 10, page default 10, api_key - your api key from personal page"
+  },
+  {
+    "id": 2,
+    "title": "Get post method (GET)",
+    "query": "http://blog.api.axenov-it.com/v1/posts/postId",
+    "description": "api_key - your api key from personal page"
+  },
+  {
+    "id": 3,
+    "title": "Add post method (POST)",
+    "query": "http://blog.api.axenov-it.com/v1/posts",
+    "description": "title, full_description, short_description, status, seo_url, api_key - your api key from personal page"
+  },
+  {
+    "id": 4,
+    "title": "Update post method (PUT)",
+    "query": "http://blog.api.axenov-it.com/v1/posts/postId",
+    "description": "title, full_description, short_description, status, seo_url, api_key - your api key from personal page"
+  },
+  {
+    "id": 5,
+    "title": "Delete post method (DELETE)",
+    "query": "http://blog.api.axenov-it.com/v1/posts/postId",
+    "description": "api_key - your api key from personal page"
+  }
+]
