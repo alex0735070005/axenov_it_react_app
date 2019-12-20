@@ -6,7 +6,6 @@ import Footer from '../components/modules/Footer';
 import '../components/shared/styles.scss';
 
 function App() {
- 
   return (
     <div className="App">
       <div className="container">
