@@ -1,12 +1,17 @@
 {
   "extends": [
     "react-app",  
-    "airbnb"
+    "airbnb",
+    "prettier"
   ],
   "plugins": [
+    "prettier"
   ],
   "rules": {
     "import/no-extraneous-dependencies": "off",
-    "jsx-quotes": ["error", "prefer-double"]
+    "jsx-quotes": [
+      1,
+      "prefer-double"
+    ]
   }
 }
