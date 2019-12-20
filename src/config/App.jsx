@@ -7,12 +7,11 @@ import '../components/shared/styles.scss';
 
 function App() {
   return (
-    <div className="App">      
+    <div className="App">
       {' '}
-      <div className="container">        
+      <div className="container">
         {' '}
-        <Header />        
-        {' '}
+        <Header />{' '}
         <Paper className="page">
           <Router />
         </Paper>
