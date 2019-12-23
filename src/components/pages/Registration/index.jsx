@@ -8,58 +8,35 @@ import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
-import Snackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-import InputPassword from '../../modules/InputPassword';
+import InputPassword from 'components/modules/InputPassword';
+import { showSustemMessage, useAppStore } from 'components/App';
 
 import { fetchRegistration } from './helpers';
 
 import './styles.scss';
 
-const Registration = (props) => {
-  const [open, setOpen] = React.useState(false);
+const Registration = props => {
+  const { dispatch } = useAppStore();
 
-  const handleClose = () => setOpen(false);
-
-  const send = (e) => {
+  const send = e => {
     e.preventDefault();
-    fetchRegistration(e.target).then((response) => {
-      if (response && response.status === 200) {
-        props.history.push('/login');
-      }
-    }).catch(() => {
-      setOpen(true);
-    });
+    fetchRegistration(e.target)
+      .then(response => {
+        if (response && response.status === 200) {
+          props.history.push('/login');
+        }
+      })
+      .catch(() =>
+        showSustemMessage({
+          dispatch,
+          variant: 'warning',
+          message: 'Login or email alredy exists',
+        })
+      );
   };
 
   return (
     <div className="registration">
-
-      <Snackbar
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
-        }}
-        open={open}
-        autoHideDuration={6000}
-        onClose={handleClose}
-        ContentProps={{
-          'aria-describedby': 'message-id',
-        }}
-        message={<span id="message-id">Email or login is exists</span>}
-        action={[
-          <IconButton
-            key="close"
-            aria-label="close"
-            color="inherit"
-            onClick={handleClose}
-          >
-            <CloseIcon />
-          </IconButton>,
-        ]}
-      />
-
       <Container maxWidth="sm">
         <h1 className="page__title">
           <AssignmentIndIcon className="page__icon" />
@@ -83,7 +60,6 @@ const Registration = (props) => {
                 </InputAdornment>
               ),
             }}
-
           />
           <TextField
             name="email"

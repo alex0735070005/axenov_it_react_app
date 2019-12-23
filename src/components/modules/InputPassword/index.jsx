@@ -8,15 +8,10 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 import './styles.scss';
 
-const InputPassword = (props) => {
+const InputPassword = props => {
   const [isShow, changeIsShow] = useState(false);
 
-  const {
-    classIconName,
-    className,
-    onChange,
-    name,
-  } = props;
+  const { classIconName, className, name } = props;
 
   const showPassword = () => {
     changeIsShow(!isShow);
@@ -29,7 +24,6 @@ const InputPassword = (props) => {
     <TextField
       name={name}
       type={type}
-      onChange={onChange}
       className={classnames(className, 'inputPassword')}
       label="Password"
       variant="outlined"
@@ -50,14 +44,12 @@ const InputPassword = (props) => {
 InputPassword.propTypes = {
   classIconName: PropTypes.string,
   className: PropTypes.string,
-  onChange: PropTypes.string,
   name: PropTypes.string,
 };
 
 InputPassword.defaultProps = {
   classIconName: '',
   className: '',
-  onChange: '',
   name: '',
 };
 

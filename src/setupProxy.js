@@ -1,11 +1,19 @@
 const proxy = require('http-proxy-middleware');
 
+const filter = (pathname, req) => {
+  // console.log(req.method);
+  // console.log(req.url);
+  // console.log(req.headers.accept);
+  return (
+    pathname.match('^(/api|/registration|/personal)') && req.method === 'POST'
+  );
+};
+
 module.exports = function setupProxy(app) {
   app.use(
-    ['/login', '/registration', '/personal'],
-    proxy({
+    proxy(filter, {
       target: 'http://localhost:9000',
       changeOrigin: true,
-    }),
+    })
   );
 };

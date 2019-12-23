@@ -1,0 +1,2 @@
+export const SUSTEM_MESSAGE_SHOW_TIME = 6000;
+export const SUSTEM_MESSAGE_HIDE_TIME = 6000;

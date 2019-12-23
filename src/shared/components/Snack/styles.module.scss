@@ -1,0 +1,36 @@
+$positionStart: 10%;
+
+@keyframes leftSlide {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: $positionStart;
+  }
+}
+
+.snack {
+  max-width: 400px;
+  position: fixed;
+}
+
+.slideLeft {
+  animation: leftSlide 1s ease-in;
+}
+
+.left {
+  left: $positionStart;
+}
+
+.bottom {
+  bottom: $positionStart;
+}
+
+.top {
+  left: $positionStart;
+}
+
+.right {
+  bottom: $positionStart;
+}

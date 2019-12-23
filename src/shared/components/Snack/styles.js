@@ -1,7 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles';
 import { amber, green } from '@material-ui/core/colors';
 
-export default makeStyles((theme) => ({
+export default theme => ({
   success: {
     backgroundColor: green[600],
   },
@@ -25,4 +24,4 @@ export default makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
   },
-}));
+});

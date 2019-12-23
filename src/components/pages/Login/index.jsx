@@ -7,15 +7,16 @@ import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
-import InputPassword from '../../modules/InputPassword';
+import InputPassword from 'components/modules/InputPassword';
+
 import { fetchLogin } from './helpers';
 
 import './styles.scss';
 
-const Login = (props) => {
-  const send = (e) => {
+const Login = props => {
+  const send = e => {
     e.preventDefault();
-    fetchLogin(e.target).then((response) => {
+    fetchLogin(e.target).then(response => {
       if (response && response.status === 200) {
         props.history.push('/personal');
       }
