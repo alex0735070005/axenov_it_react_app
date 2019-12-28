@@ -54,10 +54,15 @@ function SnackWrapper(props) {
   );
 }
 
+SnackWrapper.defaultProps = {
+  className: '',
+  onClose: null,
+};
+
 SnackWrapper.propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   message: PropTypes.string.isRequired,
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func,
   variant: PropTypes.oneOf(['error', 'info', 'success', 'warning']).isRequired,
 };
 

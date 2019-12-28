@@ -5,7 +5,8 @@ const filter = (pathname, req) => {
   // console.log(req.url);
   // console.log(req.headers.accept);
   return (
-    pathname.match('^(/api|/registration|/personal)') && req.method === 'POST'
+    pathname.match('^(/api|/registration|/personal|/login|/logout)') &&
+    /application\/json/.test(req.headers.accept)
   );
 };
 

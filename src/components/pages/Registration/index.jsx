@@ -9,30 +9,18 @@ import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import InputPassword from 'components/modules/InputPassword';
-import { showSustemMessage, useAppStore } from 'components/App';
+import { useAppStore } from 'components/App';
 
 import { fetchRegistration } from './helpers';
 
 import './styles.scss';
 
-const Registration = props => {
+const Registration = ({ history }) => {
   const { dispatch } = useAppStore();
 
   const send = e => {
     e.preventDefault();
-    fetchRegistration(e.target)
-      .then(response => {
-        if (response && response.status === 200) {
-          props.history.push('/login');
-        }
-      })
-      .catch(() =>
-        showSustemMessage({
-          dispatch,
-          variant: 'warning',
-          message: 'Login or email alredy exists',
-        })
-      );
+    fetchRegistration(e.target, dispatch, history);
   };
 
   return (

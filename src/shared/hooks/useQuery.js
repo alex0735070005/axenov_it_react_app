@@ -10,18 +10,14 @@ function useQuery(path, redirect) {
   useState(() => {
     axios(path)
       .then(({ data }) => {
+        if (redirect && !data.username) redirect();
         setResponse({
           ...responseData,
           data,
         });
       })
-      .catch((error) => {
+      .catch(() => {
         if (redirect) redirect();
-
-        setResponse({
-          ...responseData,
-          error,
-        });
       });
   });
 

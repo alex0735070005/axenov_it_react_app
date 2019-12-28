@@ -8,19 +8,16 @@ import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import InputPassword from 'components/modules/InputPassword';
-
+import { useAppStore } from 'components/App';
 import { fetchLogin } from './helpers';
 
 import './styles.scss';
 
-const Login = props => {
+const Login = ({ history }) => {
+  const { dispatch } = useAppStore();
   const send = e => {
     e.preventDefault();
-    fetchLogin(e.target).then(response => {
-      if (response && response.status === 200) {
-        props.history.push('/personal');
-      }
-    });
+    fetchLogin(e.target, dispatch, history);
   };
 
   return (

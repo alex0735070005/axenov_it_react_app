@@ -21,7 +21,8 @@ const Snack = props => {
     styles.snack,
     styles[horizontal],
     styles[vertical],
-    styles[animation]
+    styles[animation],
+    styles.center
   );
 
   return (

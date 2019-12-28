@@ -4,12 +4,22 @@ import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import { showSustemMessage, useAppStore } from 'components/App';
 import useQuery from 'shared/hooks/useQuery';
 
 import './styles.scss';
 
 const Personal = props => {
-  const user = useQuery('/personal', () => props.history.push('/login'));
+  const { dispatch } = useAppStore();
+
+  const user = useQuery('/personal', () => {
+    props.history.push('/login');
+    showSustemMessage({
+      dispatch,
+      variant: 'warning',
+      message: 'You needed authorization',
+    });
+  });
 
   if (!user.data) return null;
   const { apiKey, email, username } = user.data;

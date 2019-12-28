@@ -1,8 +1,14 @@
 $positionStart: 10%;
+$positionLeftLg: 19%;
+$positionLeftDs: 30%;
+$positionLeftSm: 25%;
+$positionLeftEm: 20%;
+$positionBottom: 30%;
+$positionBottomEm: 10%;
 
 @keyframes leftSlide {
   0% {
-    left: -100%;
+    left: -50%;
   }
 
   100% {
@@ -16,15 +22,29 @@ $positionStart: 10%;
 }
 
 .slideLeft {
-  animation: leftSlide 1s ease-in;
+  animation: leftSlide 1s linear;
 }
 
 .left {
-  left: $positionStart;
+  left: $positionLeftLg;
+  @media (max-width: 1200px) {
+    left: $positionLeftDs;
+  }
+
+  @media (max-width: 1000px) {
+    left: $positionLeftSm;
+  }
+
+  @media (max-width: 500px) {
+    left: $positionLeftEm;
+  }
 }
 
 .bottom {
-  bottom: $positionStart;
+  bottom: $positionBottom;
+  @media (max-width: 500px) {
+    bottom: $positionBottomEm;
+  }
 }
 
 .top {
