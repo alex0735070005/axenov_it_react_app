@@ -45,6 +45,9 @@ const Navbar = ({ history }) => {
         <NavLink className="navbar__link" to="/personal">
           Personal
         </NavLink>
+        <NavLink className="navbar__link" to="/admin">
+          Admin
+        </NavLink>
         <div className="navbar__loginTrigger">
           {username && <b>{username}</b>}
           <AccountCircleIcon className="navbar__circle" />
