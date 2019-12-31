@@ -8,15 +8,16 @@ import TableCell from '@material-ui/core/TableCell';
 
 const headCells = [
   {
-    id: 'name',
+    id: 'username',
     numeric: false,
     disablePadding: true,
-    label: 'Dessert (100g serving)',
+    label: 'Username',
   },
-  { id: 'calories', numeric: true, disablePadding: false, label: 'Calories' },
-  { id: 'fat', numeric: true, disablePadding: false, label: 'Fat (g)' },
-  { id: 'carbs', numeric: true, disablePadding: false, label: 'Carbs (g)' },
-  { id: 'protein', numeric: true, disablePadding: false, label: 'Protein (g)' },
+  { id: 'id', numeric: true, disablePadding: false, label: 'Id' },
+  { id: 'email', numeric: true, disablePadding: false, label: 'Email' },
+  { id: 'verify', numeric: true, disablePadding: false, label: 'Status' },
+  { id: 'role', numeric: true, disablePadding: false, label: 'Role' },
+  { id: 'api_key', numeric: true, disablePadding: false, label: 'Api key' },
 ];
 
 const EnhancedTableHead = props => {
@@ -71,6 +72,7 @@ const EnhancedTableHead = props => {
 };
 
 EnhancedTableHead.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   classes: PropTypes.object.isRequired,
   numSelected: PropTypes.number.isRequired,
   onRequestSort: PropTypes.func.isRequired,

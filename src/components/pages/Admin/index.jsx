@@ -5,11 +5,11 @@ import TabPanel from 'components/modules/admin/TabPanel';
 import GroupIcon from '@material-ui/icons/Group';
 import AssessmentIcon from '@material-ui/icons/Assessment';
 import Users from 'components/modules/admin/Users';
-import useStyles, { useTabStyles } from './styles';
+import { useTabStyles } from './styles';
 import { controlProps } from './helpers';
+import styles from './styles.module.scss';
 
 const Admin = () => {
-  const classes = useStyles();
   const tabClasses = useTabStyles();
   const [value, setValue] = React.useState(0);
 
@@ -17,15 +17,17 @@ const Admin = () => {
     setValue(newValue);
   };
 
+  const orientation = window.innerWidth > 1140 ? 'vertical' : 'horizontal';
+
   return (
-    <div className={classes.root}>
+    <div className={styles.root}>
       <Tabs
-        orientation="vertical"
         variant="scrollable"
+        orientation={orientation}
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        className={classes.tabs}
+        className={styles.tabs}
       >
         <Tab
           classes={tabClasses}
@@ -40,10 +42,10 @@ const Admin = () => {
           {...controlProps(1)}
         />
       </Tabs>
-      <TabPanel value={value} index={0}>
+      <TabPanel className={styles.tabPanel} value={value} index={0}>
         <Users />
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel className={styles.tabPanel} value={value} index={1}>
         Analytics info
       </TabPanel>
     </div>

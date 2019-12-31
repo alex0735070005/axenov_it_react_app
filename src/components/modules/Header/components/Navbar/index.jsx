@@ -19,6 +19,7 @@ const Navbar = ({ history }) => {
   const IS_USER = !!user;
 
   const username = IS_USER ? user.username : null;
+  const IS_ADMIN = IS_USER ? user.roles[0] === 'ROLE_ADMIN' : null;
 
   const logoutHandler = () => {
     if (!IS_USER) return null;
@@ -45,9 +46,11 @@ const Navbar = ({ history }) => {
         <NavLink className="navbar__link" to="/personal">
           Personal
         </NavLink>
-        <NavLink className="navbar__link" to="/admin">
-          Admin
-        </NavLink>
+        {IS_ADMIN && (
+          <NavLink className="navbar__link" to="/admin">
+            Admin
+          </NavLink>
+        )}
         <div className="navbar__loginTrigger">
           {username && <b>{username}</b>}
           <AccountCircleIcon className="navbar__circle" />

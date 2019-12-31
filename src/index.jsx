@@ -1,11 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { hydrate } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import App from './components/App';
+import { renderRoutes } from 'react-router-config';
+import routes from 'config/routes';
+import loadBranchData from 'config/loadBranchData';
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById('root')
-);
+loadBranchData(routes, window.location.pathname).then(components => {
+  hydrate(
+    <BrowserRouter>{renderRoutes(components)}</BrowserRouter>,
+    document.getElementById('root')
+  );
+});
